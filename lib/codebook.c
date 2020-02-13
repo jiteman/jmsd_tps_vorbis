@@ -24,6 +24,8 @@
 #include "misc.h"
 #include "os.h"
 
+#include "tpc_vorbis_alloca.h"
+
 /* packs the given codebook into the bitstream **************************/
 
 int vorbis_staticbook_pack(const static_codebook *c,oggpack_buffer *opb){

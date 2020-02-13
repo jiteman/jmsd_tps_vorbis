@@ -30,6 +30,9 @@
 #include "registry.h"
 #include "misc.h"
 
+#include "tpc_vorbis_alloca.h"
+
+
 /* pcm accumulator examples (not exhaustive):
 
  <-------------- lW ---------------->

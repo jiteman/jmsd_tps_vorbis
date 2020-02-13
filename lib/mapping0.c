@@ -27,6 +27,8 @@
 #include "psy.h"
 #include "misc.h"
 
+#include "tpc_vorbis_alloca.h"
+
 /* simplistic, wasteful way of doing this (unique lookup for each
    mode/submapping); there should be a central repository for
    identical lookups.  That will require minor work, so I'm putting it

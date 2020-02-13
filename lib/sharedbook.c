@@ -25,6 +25,8 @@
 #include "codebook.h"
 #include "scales.h"
 
+#include "tpc_vorbis_alloca.h"
+
 /**** pack/unpack helpers ******************************************/
 
 int ov_ilog(ogg_uint32_t v){

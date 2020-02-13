@@ -45,6 +45,8 @@
 #include "os.h"
 #include "misc.h"
 
+#include "tpc_vorbis_alloca.h"
+
 /* build lookups for trig functions; also pre-figure scaling and
    some window function algebra. */
 

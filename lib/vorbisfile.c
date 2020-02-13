@@ -22,6 +22,8 @@
 
 #include "vorbis/codec.h"
 
+#include "tpc_vorbis_alloca.h"
+
 /* we don't need or want the static callback symbols here */
 #define OV_EXCLUDE_STATIC_CALLBACKS
 #include "vorbis/vorbisfile.h"
@@ -1910,7 +1912,7 @@ vorbis_comment *ov_comment(OggVorbis_File *vf,int link){
   }
 }
 
-static int host_is_big_endian() {
+static int host_is_big_endian( void ) {
   ogg_int32_t pattern = 0xfeedface; /* deadbeef */
   unsigned char *bytewise = (unsigned char *)&pattern;
   if (bytewise[0] == 0xfe) return 1;

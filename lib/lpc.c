@@ -51,6 +51,8 @@ Carsten Bormann
 #include "scales.h"
 #include "misc.h"
 
+#include "tpc_vorbis_alloca.h"
+
 /* Autocorrelation LPC coeff generation algorithm invented by
    N. Levinson in 1947, modified by J. Durbin in 1959. */
 
@@ -58,7 +60,7 @@ Carsten Bormann
    Output: m lpc coefficients, excitation energy */
 
 float vorbis_lpc_from_data(float *data,float *lpci,int n,int m){
-  double *aut=alloca(sizeof(*aut)*(m+1));
+  double *aut=_alloca(sizeof(*aut)*(m+1));
   double *lpc=alloca(sizeof(*lpc)*(m));
   double error;
   double epsilon;
