@@ -23,6 +23,8 @@
 #ifndef _OV_ENC_H_
 #define _OV_ENC_H_
 
+#include "tpc_vorbis.h"
+
 #ifdef __cplusplus
 extern "C"
 {
@@ -56,6 +58,7 @@ extern "C"
  * \retval OV_EINVAL  Invalid setup request, eg, out of range argument.
  * \retval OV_EIMPL   Unimplemented mode; unable to comply with bitrate request.
  */
+JMSD_TPC_VORBIS_SHARED_INTERFACE
 extern int vorbis_encode_init(vorbis_info *vi,
                               long channels,
                               long rate,
@@ -93,6 +96,7 @@ extern int vorbis_encode_init(vorbis_info *vi,
  * \retval OV_EINVAL   Invalid setup request, eg, out of range argument.
  * \retval OV_EIMPL    Unimplemented mode; unable to comply with bitrate request.
  */
+JMSD_TPC_VORBIS_SHARED_INTERFACE
 extern int vorbis_encode_setup_managed(vorbis_info *vi,
                                        long channels,
                                        long rate,
@@ -125,6 +129,7 @@ extern int vorbis_encode_setup_managed(vorbis_info *vi,
  * \retval  OV_EINVAL  Invalid setup request, eg, out of range argument.
  * \retval  OV_EIMPL   Unimplemented mode; unable to comply with quality level request.
  */
+JMSD_TPC_VORBIS_SHARED_INTERFACE
 extern int vorbis_encode_setup_vbr(vorbis_info *vi,
                                   long channels,
                                   long rate,
@@ -154,6 +159,7 @@ extern int vorbis_encode_setup_vbr(vorbis_info *vi,
  * \retval OV_EINVAL   Invalid setup request, eg, out of range argument.
  * \retval OV_EIMPL    Unimplemented mode; unable to comply with quality level request.
  */
+JMSD_TPC_VORBIS_SHARED_INTERFACE
 extern int vorbis_encode_init_vbr(vorbis_info *vi,
                                   long channels,
                                   long rate,
@@ -188,6 +194,7 @@ extern int vorbis_encode_init_vbr(vorbis_info *vi,
  * initialize the high-level encoding setup
  *
  */
+JMSD_TPC_VORBIS_SHARED_INTERFACE
 extern int vorbis_encode_setup_init(vorbis_info *vi);
 
 /**
@@ -216,6 +223,7 @@ extern int vorbis_encode_setup_init(vorbis_info *vi);
  *
  * \retval OV_EIMPL   Unimplemented or unknown request
  */
+JMSD_TPC_VORBIS_SHARED_INTERFACE
 extern int vorbis_encode_ctl(vorbis_info *vi,int number,void *arg);
 
 /**

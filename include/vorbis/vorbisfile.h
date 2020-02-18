@@ -17,6 +17,8 @@
 #ifndef _OV_FILE_H_
 #define _OV_FILE_H_
 
+#include "tpc_vorbis.h"
+
 #ifdef __cplusplus
 extern "C"
 {
@@ -145,56 +147,88 @@ typedef struct OggVorbis_File {
 } OggVorbis_File;
 
 
+JMSD_TPC_VORBIS_SHARED_INTERFACE
 extern int ov_clear(OggVorbis_File *vf);
+JMSD_TPC_VORBIS_SHARED_INTERFACE
 extern int ov_fopen(const char *path,OggVorbis_File *vf);
+JMSD_TPC_VORBIS_SHARED_INTERFACE
 extern int ov_open(FILE *f,OggVorbis_File *vf,const char *initial,long ibytes);
-extern int ov_open_callbacks(void *datasource, OggVorbis_File *vf,
-                const char *initial, long ibytes, ov_callbacks callbacks);
+JMSD_TPC_VORBIS_SHARED_INTERFACE
+extern int ov_open_callbacks(void *datasource, OggVorbis_File *vf, const char *initial, long ibytes, ov_callbacks callbacks);
 
+JMSD_TPC_VORBIS_SHARED_INTERFACE
 extern int ov_test(FILE *f,OggVorbis_File *vf,const char *initial,long ibytes);
-extern int ov_test_callbacks(void *datasource, OggVorbis_File *vf,
-                const char *initial, long ibytes, ov_callbacks callbacks);
+JMSD_TPC_VORBIS_SHARED_INTERFACE
+extern int ov_test_callbacks(void *datasource, OggVorbis_File *vf, const char *initial, long ibytes, ov_callbacks callbacks);
+JMSD_TPC_VORBIS_SHARED_INTERFACE
 extern int ov_test_open(OggVorbis_File *vf);
 
+JMSD_TPC_VORBIS_SHARED_INTERFACE
 extern long ov_bitrate(OggVorbis_File *vf,int i);
+JMSD_TPC_VORBIS_SHARED_INTERFACE
 extern long ov_bitrate_instant(OggVorbis_File *vf);
+JMSD_TPC_VORBIS_SHARED_INTERFACE
 extern long ov_streams(OggVorbis_File *vf);
+JMSD_TPC_VORBIS_SHARED_INTERFACE
 extern long ov_seekable(OggVorbis_File *vf);
+JMSD_TPC_VORBIS_SHARED_INTERFACE
 extern long ov_serialnumber(OggVorbis_File *vf,int i);
 
+JMSD_TPC_VORBIS_SHARED_INTERFACE
 extern ogg_int64_t ov_raw_total(OggVorbis_File *vf,int i);
+JMSD_TPC_VORBIS_SHARED_INTERFACE
 extern ogg_int64_t ov_pcm_total(OggVorbis_File *vf,int i);
+JMSD_TPC_VORBIS_SHARED_INTERFACE
 extern double ov_time_total(OggVorbis_File *vf,int i);
 
+JMSD_TPC_VORBIS_SHARED_INTERFACE
 extern int ov_raw_seek(OggVorbis_File *vf,ogg_int64_t pos);
+JMSD_TPC_VORBIS_SHARED_INTERFACE
 extern int ov_pcm_seek(OggVorbis_File *vf,ogg_int64_t pos);
+JMSD_TPC_VORBIS_SHARED_INTERFACE
 extern int ov_pcm_seek_page(OggVorbis_File *vf,ogg_int64_t pos);
+JMSD_TPC_VORBIS_SHARED_INTERFACE
 extern int ov_time_seek(OggVorbis_File *vf,double pos);
+JMSD_TPC_VORBIS_SHARED_INTERFACE
 extern int ov_time_seek_page(OggVorbis_File *vf,double pos);
 
+JMSD_TPC_VORBIS_SHARED_INTERFACE
 extern int ov_raw_seek_lap(OggVorbis_File *vf,ogg_int64_t pos);
+JMSD_TPC_VORBIS_SHARED_INTERFACE
 extern int ov_pcm_seek_lap(OggVorbis_File *vf,ogg_int64_t pos);
+JMSD_TPC_VORBIS_SHARED_INTERFACE
 extern int ov_pcm_seek_page_lap(OggVorbis_File *vf,ogg_int64_t pos);
+JMSD_TPC_VORBIS_SHARED_INTERFACE
 extern int ov_time_seek_lap(OggVorbis_File *vf,double pos);
+JMSD_TPC_VORBIS_SHARED_INTERFACE
 extern int ov_time_seek_page_lap(OggVorbis_File *vf,double pos);
 
+JMSD_TPC_VORBIS_SHARED_INTERFACE
 extern ogg_int64_t ov_raw_tell(OggVorbis_File *vf);
+JMSD_TPC_VORBIS_SHARED_INTERFACE
 extern ogg_int64_t ov_pcm_tell(OggVorbis_File *vf);
+JMSD_TPC_VORBIS_SHARED_INTERFACE
 extern double ov_time_tell(OggVorbis_File *vf);
 
+JMSD_TPC_VORBIS_SHARED_INTERFACE
 extern vorbis_info *ov_info(OggVorbis_File *vf,int link);
+JMSD_TPC_VORBIS_SHARED_INTERFACE
 extern vorbis_comment *ov_comment(OggVorbis_File *vf,int link);
 
-extern long ov_read_float(OggVorbis_File *vf,float ***pcm_channels,int samples,
-                          int *bitstream);
+JMSD_TPC_VORBIS_SHARED_INTERFACE
+extern long ov_read_float(OggVorbis_File *vf,float ***pcm_channels,int samples, int *bitstream);
+JMSD_TPC_VORBIS_SHARED_INTERFACE
 extern long ov_read_filter(OggVorbis_File *vf,char *buffer,int length,
                           int bigendianp,int word,int sgned,int *bitstream,
                           void (*filter)(float **pcm,long channels,long samples,void *filter_param),void *filter_param);
-extern long ov_read(OggVorbis_File *vf,char *buffer,int length,
-                    int bigendianp,int word,int sgned,int *bitstream);
+JMSD_TPC_VORBIS_SHARED_INTERFACE
+extern long ov_read(OggVorbis_File *vf,char *buffer,int length, int bigendianp,int word,int sgned,int *bitstream);
+JMSD_TPC_VORBIS_SHARED_INTERFACE
 extern int ov_crosslap(OggVorbis_File *vf1,OggVorbis_File *vf2);
 
+JMSD_TPC_VORBIS_SHARED_INTERFACE
 extern int ov_halfrate(OggVorbis_File *vf,int flag);
+JMSD_TPC_VORBIS_SHARED_INTERFACE
 extern int ov_halfrate_p(OggVorbis_File *vf);
 
 #ifdef __cplusplus
